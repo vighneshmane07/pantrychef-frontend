@@ -1,0 +1,628 @@
+
+/* =========================================
+   PANTRYCHEF AI - RECIPE DETAILS PAGE
+========================================= */
+
+.rd-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 5%;
+  color: #263d2e;
+  box-sizing: border-box;
+}
+
+.rd-page * {
+  box-sizing: border-box;
+}
+
+.rd-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #e6e5d9;
+  background: #fffefa;
+  color: #365b42;
+  padding: 11px 17px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 26px;
+}
+
+.rd-back-button:hover {
+  background: #e9eee3;
+  transform: translateX(-3px);
+}
+
+/* HERO */
+
+.rd-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 65px;
+}
+
+.rd-hero-image {
+  min-height: 390px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #e4e9d9;
+}
+
+.rd-hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  display: block;
+}
+
+.rd-food-placeholder {
+  min-height: 390px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 45%, #f8f3df 0 24%, transparent 25%),
+    linear-gradient(135deg, #dce6cf, #b8c9a7);
+}
+
+.rd-food-placeholder > span:first-child {
+  font-size: 125px;
+  filter: drop-shadow(0 15px 12px rgba(42, 65, 44, 0.15));
+  z-index: 1;
+}
+
+.rd-floating-food {
+  position: absolute;
+  font-size: 48px;
+}
+
+.rd-food-one {
+  top: 18%;
+  left: 19%;
+  transform: rotate(-15deg);
+}
+
+.rd-food-two {
+  bottom: 18%;
+  right: 17%;
+  transform: rotate(15deg);
+}
+
+.rd-food-three {
+  top: 18%;
+  right: 20%;
+}
+
+.rd-image-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 254, 250, 0.94);
+  color: #365b42;
+  padding: 11px 16px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+/* HERO CONTENT */
+
+.rd-hero-content {
+  padding: 12px 0;
+}
+
+.rd-eyebrow {
+  color: #e77c43;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.rd-hero-content h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.12;
+  color: #263d2e;
+  margin: 17px 0;
+  letter-spacing: -1.2px;
+}
+
+.rd-description {
+  color: #788477;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 27px;
+}
+
+.rd-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.rd-meta-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 12px;
+  background: #f0f1e8;
+  border: 1px solid #e7e9dc;
+  border-radius: 15px;
+  min-width: 0;
+}
+
+.rd-meta-card > svg {
+  color: #527456;
+  flex-shrink: 0;
+}
+
+.rd-meta-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.rd-meta-card span {
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #879184;
+  font-weight: 800;
+}
+
+.rd-meta-card strong {
+  color: #2e4b37;
+  font-size: 13px;
+}
+
+.rd-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 21px;
+  border: 1px solid #dce4d5;
+  border-radius: 30px;
+  background: #fffefa;
+  color: #365b42;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rd-save-button:hover,
+.rd-save-button.rd-is-saved {
+  background: #e8eee2;
+  border-color: #789579;
+}
+
+.rd-save-button.rd-is-saved {
+  color: #d56e42;
+}
+
+/* SECTION HEADING */
+
+.rd-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e9e8dd;
+}
+
+.rd-section-heading h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  color: #263d2e;
+  margin: 9px 0 7px;
+}
+
+.rd-section-heading p {
+  color: #899186;
+  font-size: 14px;
+  margin: 0;
+}
+
+.rd-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.rd-progress strong {
+  font-size: 27px;
+  color: #416747;
+}
+
+.rd-progress span {
+  font-size: 11px;
+  color: #899186;
+}
+
+/* CONTENT GRID */
+
+.rd-content-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 23px;
+  align-items: start;
+}
+
+.rd-panel {
+  background: #fffefa;
+  border: 1px solid #ece9df;
+  border-radius: 21px;
+  padding: 27px;
+  box-shadow: 0 7px 25px rgba(49, 67, 43, 0.035);
+}
+
+.rd-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.rd-panel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: #e9eee2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #416747;
+  flex-shrink: 0;
+}
+
+.rd-panel-heading h3 {
+  margin: 0 0 5px;
+  font-size: 19px;
+  color: #2c4533;
+}
+
+.rd-panel-heading p {
+  margin: 0;
+  font-size: 12px;
+  color: #92998e;
+}
+
+/* SERVINGS */
+
+.rd-servings-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  margin-bottom: 13px;
+  border-top: 1px solid #efeee6;
+  border-bottom: 1px solid #efeee6;
+}
+
+.rd-servings-control > span {
+  font-size: 13px;
+  font-weight: 700;
+  color: #516a54;
+}
+
+.rd-servings-control > div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rd-servings-control button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e8dd;
+  border-radius: 50%;
+  background: #f5f6ef;
+  color: #416747;
+  font-size: 19px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.rd-servings-control button:hover {
+  background: #dfe8d9;
+}
+
+.rd-servings-control strong {
+  font-size: 15px;
+  min-width: 15px;
+  text-align: center;
+}
+
+/* INGREDIENTS */
+
+.rd-ingredient-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rd-ingredient {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid #eeede5;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fffefa;
+  color: #465b49;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rd-ingredient svg {
+  color: #a5b19d;
+  flex-shrink: 0;
+}
+
+.rd-ingredient:hover {
+  border-color: #9eb39a;
+  background: #f8faf5;
+}
+
+.rd-ingredient.rd-completed {
+  background: #edf2e8;
+  border-color: #dce7d5;
+  color: #8a9585;
+}
+
+.rd-ingredient.rd-completed svg {
+  color: #4e7952;
+}
+
+.rd-ingredient.rd-completed span {
+  text-decoration: line-through;
+}
+
+.rd-check-progress {
+  margin-top: 22px;
+}
+
+.rd-progress-track {
+  width: 100%;
+  height: 7px;
+  background: #edf0e7;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 9px;
+}
+
+.rd-progress-track > div {
+  height: 100%;
+  background: #638566;
+  border-radius: 20px;
+  transition: width 0.25s ease;
+}
+
+.rd-check-progress > span {
+  font-size: 11px;
+  color: #92998e;
+}
+
+/* INSTRUCTIONS */
+
+.rd-instruction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rd-instruction-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #eeede5;
+  border-radius: 13px;
+  background: #fffefa;
+  color: #526052;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.rd-instruction-step:hover {
+  background: #f8faf5;
+  border-color: #b7c8b0;
+}
+
+.rd-step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #e9eee2;
+  color: #416747;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.rd-step-text {
+  font-size: 13px;
+  line-height: 1.7;
+  padding-top: 5px;
+}
+
+.rd-instruction-step.rd-step-completed {
+  background: #f0f4eb;
+  border-color: #dce7d5;
+}
+
+.rd-step-completed .rd-step-number {
+  background: #dce9d7;
+  color: #416747;
+}
+
+.rd-step-completed .rd-step-text {
+  color: #92998e;
+  text-decoration: line-through;
+}
+
+/* CHEF TIP */
+
+.rd-chef-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f1f3e9;
+  border-radius: 14px;
+  padding: 16px;
+  margin-top: 22px;
+  color: #527456;
+}
+
+.rd-chef-tip > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.rd-chef-tip strong {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.rd-chef-tip p {
+  margin: 0;
+  color: #899186;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* BOTTOM NOTE */
+
+.rd-bottom-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 42px 0 10px;
+  padding: 20px;
+  border-top: 1px solid #e9e8dd;
+  color: #7d897b;
+  font-size: 13px;
+  text-align: center;
+}
+
+.rd-bottom-note > span {
+  font-size: 22px;
+}
+
+.rd-bottom-note p {
+  margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .rd-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .rd-hero-image,
+  .rd-hero-image img,
+  .rd-food-placeholder {
+    min-height: 320px;
+  }
+
+  .rd-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .rd-page {
+    padding: 20px 16px;
+  }
+
+  .rd-hero {
+    margin-bottom: 45px;
+  }
+
+  .rd-hero-image,
+  .rd-hero-image img,
+  .rd-food-placeholder {
+    min-height: 245px;
+  }
+
+  .rd-food-placeholder > span:first-child {
+    font-size: 95px;
+  }
+
+  .rd-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .rd-description {
+    font-size: 14px;
+  }
+
+  .rd-meta-grid {
+    gap: 7px;
+  }
+
+  .rd-meta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 9px;
+    gap: 7px;
+  }
+
+  .rd-meta-card strong {
+    font-size: 12px;
+  }
+
+  .rd-section-heading {
+    align-items: flex-start;
+  }
+
+  .rd-section-heading h2 {
+    font-size: 25px;
+  }
+
+  .rd-progress {
+    flex-shrink: 0;
+  }
+
+  .rd-panel {
+    padding: 19px 15px;
+  }
+
+  .rd-bottom-note {
+    font-size: 11px;
+  }
+}
