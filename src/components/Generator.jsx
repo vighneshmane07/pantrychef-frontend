@@ -99,7 +99,7 @@ export default function Generator() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/generate-recipes",
+        "https://pantrychef-backend-atrn.onrender.com/api/generate-recipes",
         {
           method: "POST",
           headers: {
